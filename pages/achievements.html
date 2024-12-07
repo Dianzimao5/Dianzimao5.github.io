@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成就榜 - PRISMA!</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/achievements.css">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">PRISMA!</a>
+            
+            <nav class="nav-links">
+                <a href="../index.html">首页</a>
+                <a href="games.html">游戏库</a>
+                <a href="players.html">玩家</a>
+                <a href="achievements.html" class="active">成就榜</a>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" placeholder="搜索成就...">
+                <button class="search-button">🔍</button>
+            </div>
+
+            <div class="auth-buttons">
+                <button class="login-btn">登录</button>
+                <button class="register-btn">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main-container">
+        <!-- 成就榜标题区 -->
+        <div class="achievements-header">
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <div class="stat-value">12,345</div>
+                    <div class="stat-label">总成就数</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">789</div>
+                    <div class="stat-label">今日解锁</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1.2%</div>
+                    <div class="stat-label">平均稀有度</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 筛选和排序 -->
+        <div class="filters-container">
+            <div class="filter-group">
+                <select id="gameSelect">
+                    <option value="">所有游戏</option>
+                    <option value="cyberpunk">赛博朋克2077</option>
+                    <option value="eldenring">艾尔登法环</option>
+                    <option value="hollowknight">空洞骑士</option>
+                </select>
+                <select id="raritySelect">
+                    <option value="">所有稀有度</option>
+                    <option value="common">普通 (>20%)</option>
+                    <option value="rare">稀有 (5-20%)</option>
+                    <option value="legendary">传说 (<5%)</option>
+                </select>
+            </div>
+            <div class="sort-group">
+                <select id="sortSelect">
+                    <option value="latest">最新解锁</option>
+                    <option value="rarity">按稀有度</option>
+                    <option value="popular">最受欢迎</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- 成就列表 -->
+        <div class="achievements-list" id="achievementsList">
+            <!-- 成就卡片将通过JavaScript动态添加 -->
+        </div>
+
+        <!-- 分页控制 -->
+        <div class="pagination">
+            <button class="page-btn" disabled>&lt;</button>
+            <span class="page-number">1</span>
+            <button class="page-btn">&gt;</button>
+        </div>
+    </main>
+
+    <!-- 成就详情模态框 -->
+    <div class="modal" id="achievementModal">
+        <div class="modal-content achievement-modal">
+            <div class="modal-header">
+                <h2 id="achievementTitle"></h2>
+                <button class="close-button" onclick="closeModal('achievementModal')">&times;</button>
+            </div>
+            <div class="achievement-modal-content">
+                <div class="achievement-info">
+                    <div class="achievement-icon" id="achievementIcon"></div>
+                    <div class="achievement-details">
+                        <div class="game-name" id="achievementGame"></div>
+                        <div class="achievement-description" id="achievementDesc"></div>
+                        <div class="achievement-stats">
+                            <div class="stat">
+                                <span class="stat-label">解锁人数</span>
+                                <span class="stat-value" id="achievementUnlocks"></span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">稀有度</span>
+                                <span class="stat-value" id="achievementRarity"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="recent-unlocks">
+                    <h3>最近解锁</h3>
+                    <div class="unlocks-list" id="recentUnlocksList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">PRISMA!</div>
+            <div class="footer-links">
+                <a href="/about">关于我们</a>
+                <a href="/contact">联系方式</a>
+                <a href="/terms">使用条款</a>
+                <a href="/privacy">隐私政策</a>
+            </div>
+            <div class="footer-copyright">
+                © 2024 PRISMA! All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/achievements.js"></script>
+</body>
+</html>

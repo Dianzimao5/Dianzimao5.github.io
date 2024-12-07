@@ -1,0 +1,289 @@
+/* 成就榜页面特定样式 */
+
+/* 成就榜头部统计 */
+.achievements-header {
+    background: linear-gradient(to right, #2a2a72, #009ffd);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.stats-overview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* 筛选器样式 */
+.filters-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.filter-group select,
+.sort-group select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+/* 成就列表样式 */
+.achievements-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.achievement-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.achievement-card:hover {
+    transform: translateY(-4px);
+}
+
+.achievement-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: #f8f9fa;
+}
+
+.achievement-info {
+    flex: 1;
+}
+
+.achievement-title {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.achievement-game {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.rarity-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.rarity-common {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.rarity-rare {
+    background: #c3dafe;
+    color: #434190;
+}
+
+.rarity-legendary {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+/* 成就详情模态框样式 */
+.achievement-modal {
+    max-width: 700px;
+}
+
+.achievement-modal-content {
+    padding: 1.5rem;
+}
+
+.achievement-info {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.modal .achievement-icon {
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
+}
+
+.achievement-details {
+    flex: 1;
+}
+
+.game-name {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-description {
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 1rem;
+}
+
+.achievement-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.achievement-stats .stat {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* 最近解锁列表 */
+.recent-unlocks {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.unlocks-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.unlock-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.unlock-player {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.player-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #e2e8f0;
+}
+
+.unlock-time {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* 分页控制 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.page-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-number {
+    font-weight: bold;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .stats-overview {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .filters-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .filter-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .filter-group select,
+    .sort-group select {
+        width: 100%;
+    }
+
+    .achievements-list {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-info {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

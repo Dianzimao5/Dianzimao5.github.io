@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏库 - PRISMA!</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/games.css">
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">PRISMA!</a>
+            
+            <nav class="nav-links">
+                <a href="../index.html">首页</a>
+                <a href="games.html" class="active">游戏库</a>
+                <a href="players.html">玩家</a>
+                <a href="achievements.html">成就榜</a>
+            </nav>
+
+            <div class="search-container">
+                <input type="text" placeholder="搜索游戏...">
+                <button class="search-button">🔍</button>
+            </div>
+
+            <div class="auth-buttons">
+                <button class="login-btn">登录</button>
+                <button class="register-btn">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main-container">
+        <!-- 游戏分类筛选 -->
+        <div class="filters-container">
+            <div class="filter-group">
+                <h3>游戏类型</h3>
+                <div class="filter-options">
+                    <label class="filter-option">
+                        <input type="checkbox" value="rpg"> RPG
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="action"> 动作
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="strategy"> 策略
+                    </label>
+                    <label class="filter-option">
+                        <input type="checkbox" value="adventure"> 冒险
+                    </label>
+                </div>
+            </div>
+
+            <div class="sort-group">
+                <select id="sortSelect">
+                    <option value="popular">按热度排序</option>
+                    <option value="new">最新发布</option>
+                    <option value="price">按价格排序</option>
+                    <option value="rating">按评分排序</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- 游戏列表 -->
+        <div class="games-grid" id="gamesContainer">
+            <!-- 游戏卡片将通过 JavaScript 动态添加 -->
+        </div>
+
+        <!-- 加载更多按钮 -->
+        <div class="load-more">
+            <button id="loadMoreBtn" class="load-more-btn">加载更多</button>
+        </div>
+    </main>
+
+    <!-- 页脚部分保持和主页一致 -->
+    <footer class="footer">
+        <!-- 页脚内容 -->
+    </footer>
+
+    <!-- 游戏详情模态框 -->
+    <div class="modal" id="gameModal">
+        <div class="modal-content game-modal">
+            <div class="modal-header">
+                <h2 id="gameTitle"></h2>
+                <button class="close-button" onclick="closeModal('gameModal')">&times;</button>
+            </div>
+            <div class="game-modal-content">
+                <div class="game-cover"></div>
+                <div class="game-info">
+                    <div class="game-stats">
+                        <div class="stat">
+                            <span class="stat-label">发布日期</span>
+                            <span class="stat-value" id="gameDate"></span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">开发商</span>
+                            <span class="stat-value" id="gameDeveloper"></span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">评分</span>
+                            <span class="stat-value" id="gameRating"></span>
+                        </div>
+                    </div>
+                    <div class="game-description" id="gameDescription"></div>
+                    <div class="game-achievements">
+                        <h3>游戏成就</h3>
+                        <div class="achievements-preview" id="gameAchievements"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/games.js"></script>
+</body>
+</html>
